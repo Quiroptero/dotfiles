@@ -1,0 +1,20 @@
+"*":
+  core:
+    disabledPackages: [
+      "spell-check"
+      "language-gfm"
+      "autocomplete-plus"
+      "metrics"
+      "exception-reporting"
+    ]
+    telemetryConsent: "no"
+  "document-outline":
+    autoScrollOutline: false
+  editor:
+    fontSize: 15
+    preferredLineLength: 120
+    softWrap: true
+    softWrapAtPreferredLineLength: true
+  "markdown-writer": {}
+  welcome:
+    showOnStartup: false
