@@ -24,3 +24,6 @@
 # Neovim
 !/.config/nvim
 
+# Kitty terminal
+!/.config/kitty
+
