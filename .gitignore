@@ -27,3 +27,6 @@
 # Kitty terminal
 !/.config/kitty
 
+# KeePassXC
+!/.config/keepassxc
+
