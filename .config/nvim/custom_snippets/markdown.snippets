@@ -1,0 +1,27 @@
+###################
+# Text formatting #
+###################
+
+snippet * "italics"
+*${1:${VISUAL}}*$0
+endsnippet
+
+snippet ** "bold"
+**${1:${VISUAL}}**$0
+endsnippet
+
+snippet *** "bold italics"
+***${1:${VISUAL}}***$0
+endsnippet
+
+################
+# Common stuff #
+################
+
+snippet link
+[${1:${VISUAL:Text}}](${3:https://${2:www.url.com}})$0
+endsnippet
+
+snippet "" "spanish quotes"
+«${1:${VISUAL}}»$0
+endsnippet
