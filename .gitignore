@@ -6,3 +6,6 @@
 # This file
 !.gitignore
 
+# Explain what this setup is about
+!README.md
+
