@@ -30,3 +30,6 @@
 # KeePassXC
 !/.config/keepassxc
 
+# Git
+!.gitconfig
+
