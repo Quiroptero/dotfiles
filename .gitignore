@@ -1,11 +1,16 @@
 # Ignore everything
-*
+/*
 
-# Except these files
+# ----------
+# Exceptions
 
 # This file
 !.gitignore
 
 # Explain what this setup is about
 !README.md
+
+# Zsh + Oh My Zsh!
+!.zshrc
+!/.zsh-custom
 
