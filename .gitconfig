@@ -1,7 +1,5 @@
 [init]
 	defaultBranch = main
-[include]
-  path = ~/.gitconfig.user
 [core]
 	editor = /usr/bin/vim
 	pager = diff-so-fancy | less --tabs=4 -RFX
@@ -10,3 +8,5 @@
 	diffFilter = diff-so-fancy --patch
 [worktree]
 	guessRemote = true
+[include]
+    path = ~/.gitconfig.user
