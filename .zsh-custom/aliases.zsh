@@ -21,3 +21,7 @@ alias gs="git status -sb"
 alias blog="cd ~/projects/blog/quiroptero-source/draft && nvim ."
 alias esc="cd ~/projects/escribir/publicable && nvim ."
 alias web="cd ~/projects/website/omiranda-source && nvim ."
+
+# hugo
+# see: https://gohugo.io/commands/hugo_server/ 
+alias hugos="hugo server --renderToMemory --buildDrafts --disableFastRender --navigateToChanged --printMemoryUsage --printPathWarnings --printUnusedTemplates --templateMetrics --gc"
