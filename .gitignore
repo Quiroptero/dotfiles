@@ -28,6 +28,7 @@
 !/.config/nvim
 # Ignore spellfiles, they can be downloaded if necessary
 /.config/nvim/spell/
+/.config/nvim/lazy-lock.json
 
 # Kitty
 !/.config/kitty
