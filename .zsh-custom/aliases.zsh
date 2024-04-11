@@ -11,6 +11,7 @@ alias ds="dot status -sb"
 
 # utils
 alias pbcopy="xclip -selection clipboard"
+alias setx="setxkbmap es"
 
 # git
 alias glog="git log --graph --pretty=format:'%Cred%h%Creset %an: %s - %Creset %C(yellow)%d%Creset %Cgreen(%cr)%Creset' --abbrev-commit --date=relative"
