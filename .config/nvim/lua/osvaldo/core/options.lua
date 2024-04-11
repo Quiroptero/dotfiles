@@ -33,3 +33,12 @@ opt.clipboard:append("unnamedplus") -- use system clipboard as default register
 -- split windows
 opt.splitright = true -- split vertical window to the right
 opt.splitbelow = true -- split horizontal window to the bottom
+
+-- spell checking
+-- HACK: For fresh environments you might need to download additional languages first.
+--       To do that, momentarily disable the nvim-tree plugin, install the missing spellfiles,
+--       restart neovim and enable nvim-tree.
+--       See plugins/nvim-tree.lua for more details.
+opt.encoding = "utf-8"
+opt.spelllang = {"en", "es"}
+opt.spell = false
