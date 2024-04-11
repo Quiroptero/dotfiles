@@ -20,4 +20,4 @@ alias gs="git status -sb"
 # navigation
 alias blog="cd ~/projects/blog/quiroptero-source/draft && nvim ."
 alias esc="cd ~/projects/escribir/publicable && nvim ."
-
+alias web="cd ~/projects/website/omiranda-source && nvim ."
