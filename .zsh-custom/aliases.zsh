@@ -18,9 +18,13 @@ alias glog="git log --graph --pretty=format:'%Cred%h%Creset %an: %s - %Creset %C
 alias gs="git status -sb"
 
 # navigation
-alias blog="cd ~/projects/blog/quiroptero-source/draft && nvim ."
-alias esc="cd ~/projects/escribir/publicable && nvim ."
-alias web="cd ~/projects/website/omiranda-source && nvim ."
+# reminder for myself: "e" stands for "edit"
+alias blog="cd ~/projects/blog/quiroptero-source/draft"
+alias bloge="blog && nvim ."
+alias publ="cd ~/projects/escribir/publicable"
+alias puble="esc && nvim ."
+alias lore="cd ~/projects/website/omiranda-source"
+alias loree="web && nvim ."
 
 # hugo
 # see: https://gohugo.io/commands/hugo_server/ 
