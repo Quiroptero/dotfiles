@@ -10,3 +10,9 @@ config
 ascii
 spellfile
 Netrw
+reddit
+StackOverflow
+netrw
+keymaps
+Neovim's
+Github
