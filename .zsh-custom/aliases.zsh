@@ -29,3 +29,6 @@ alias loree="web && nvim ."
 # hugo
 # see: https://gohugo.io/commands/hugo_server/ 
 alias hugos="hugo server --renderToMemory --buildDrafts --disableFastRender --navigateToChanged --printMemoryUsage --printPathWarnings --printUnusedTemplates --templateMetrics --gc"
+
+# use eza instead of ls
+alias ls="eza --color=always --long --git --no-filesize --icons=always --no-time --no-user --no-permissions"
