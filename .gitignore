@@ -41,3 +41,7 @@
 
 # KeePassXC
 !/.config/keepassxc
+
+# yabai + skhd (macOS only)
+!/.config/yabai
+!/.config/skhd
