@@ -25,6 +25,7 @@ alias publ="cd ~/projects/escribir/publicable"
 alias puble="esc && nvim ."
 alias lore="cd ~/projects/website/omiranda-source"
 alias loree="web && nvim ."
+alias paper="cd ~/projects/blog/paperbat && nvim ."
 
 # hugo
 # see: https://gohugo.io/commands/hugo_server/ 
