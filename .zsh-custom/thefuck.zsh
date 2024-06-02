@@ -1,3 +1,3 @@
 # thefuck alias
 eval $(thefuck --alias)
-eval $(thefuck --alias fk)
+eval $(thefuck --alias ff)
