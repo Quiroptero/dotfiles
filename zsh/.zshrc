@@ -18,6 +18,9 @@ ZSH_CUSTOM=$HOME/.zsh-custom
 # The custom folder contains files that define aliases.
 # For a full list of active aliases, run `alias`.
 
+# Make the zcompdump file disappear from HOME
+ZSH_COMPDUMP="$ZSH/cache/zcompdump"
+
 # Plugins
 plugins=(git web-search copypath copybuffer dirhistory history jsontools)
 
