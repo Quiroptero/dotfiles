@@ -21,4 +21,10 @@ ZSH_CUSTOM=$HOME/.zsh-custom
 # Plugins
 plugins=(git web-search copypath copybuffer dirhistory history jsontools)
 
+# pre-Initialization stuff (OS-specific)
+source "$HOME/.zsh-os.zsh"
+autoload -Uz compinit
+compinit
+
+# Initialization
 source $ZSH/oh-my-zsh.sh

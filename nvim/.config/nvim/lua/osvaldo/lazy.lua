@@ -16,4 +16,3 @@ require("lazy").setup({ { import = "osvaldo.plugins" }, { import = "osvaldo.plug
     notify = false,
   },
 })
-
