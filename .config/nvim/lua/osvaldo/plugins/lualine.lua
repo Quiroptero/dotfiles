@@ -1,6 +1,6 @@
 return {
   "nvim-lualine/lualine.nvim",
-  dependencies = { "nvim-tree/nvim-web-devicons" },
+  dependencies = { "nvim-tree/nvim-web-devicons" , "skwee357/nvim-prose" },
   config = function()
     local lualine = require("lualine")
     local lazy_status = require("lazy.status") -- to configure lazy pending updates count
@@ -15,6 +15,8 @@ return {
       bg = "#112638",
       inactive_bg = "#2c3043",
     }
+
+    local prose = require 'nvim-prose'
 
     local my_lualine_theme = {
       normal = {
@@ -53,7 +55,7 @@ return {
     lualine.setup({
       options = {
         -- theme = my_lualine_theme,
-        theme = "gruvbox_dark" 
+        theme = "gruvbox_dark"
       },
       sections = {
         lualine_x = {
@@ -65,9 +67,10 @@ return {
           { "encoding" },
           { "fileformat" },
           { "filetype" },
+          { prose.word_count,   cond = prose.is_available },
+          { prose.reading_time, cond = prose.is_available },
         },
       },
     })
   end,
 }
-
