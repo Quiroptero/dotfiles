@@ -5,10 +5,6 @@ alias saliases="source ~/.zsh-custom/aliases.zsh"
 # exiftool
 alias exifs="exiftool -T -filename -datetimeoriginal -focallength -fnumber -iso -shutterspeed"
 
-# dotfiles
-alias dot="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
-alias ds="dot status -sb"
-
 # utils
 alias pbcopy="xclip -selection clipboard"
 alias setx="setxkbmap es"
@@ -21,6 +17,8 @@ alias gs="git status -sb"
 # reminder for myself: "e" stands for "edit"
 alias blog="cd ~/projects/blog/quiroptero.blog/main"
 alias bloge="blog && nvim ."
+alias dot="cd ~/dotfiles"
+alias dote="dot && nvim ."
 alias publ="cd ~/projects/escribir/publicable"
 alias puble="publ && nvim ."
 alias lore="cd ~/projects/website/source"
