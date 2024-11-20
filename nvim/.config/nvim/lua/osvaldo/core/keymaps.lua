@@ -11,10 +11,10 @@ keymap.set("n", "<leader>+", "<C-a>", { desc = "Increment number" })
 keymap.set("n", "<leader>-", "<C-x>", { desc = "Decrement number" })
 
 -- window management
-keymap.set("n", "<leader>sv", "<C-w>v", { desc = "Split window vertically" })
-keymap.set("n", "<leader>sh", "<C-w>s", { desc = "Split window horizontally" })
-keymap.set("n", "<leader>se", "<C-w>=", { desc = "Make splits equal size" })
-keymap.set("n", "<leader>sx", "<cmd>close<CR>", { desc = "Close current split" })
+keymap.set("n", "<leader>wv", "<C-w>v", { desc = "Split [W]indow [V]ertically" })
+keymap.set("n", "<leader>wh", "<C-w>s", { desc = "Split [W]indow [H]orizontally" })
+keymap.set("n", "<leader>we", "<C-w>=", { desc = "Make [W]indow splits [E]qual size" })
+keymap.set("n", "<leader>wx", "<cmd>close<CR>", { desc = "Close current [W]indow split [X]" })
 
 -- tab management
 keymap.set("n", "<leader>to", "<cmd>tabnew<CR>", { desc = "Open new tab" })
