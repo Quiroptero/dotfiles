@@ -15,3 +15,18 @@ Also, [dotfiles are meant to be forked](https://zachholman.com/2010/08/dotfiles-
 Dotfiles are kept inside directories named after the software they belong to.
 OS-specific dotfiles are kept with the same structure in mind,
 with an additional layer (directory) at the top, named after the OS they belong to.
+
+## usage
+
+One-line example to remind myself on how to use this setup.
+From within `~`:
+
+`stow --no-folding -d ~/dotfiles -S nvim -t ~ -v3`
+
+* `--no-folding`: Stow only the _leaves_, not the branches.
+  This means that only files will be stowed,
+  whereas directories might be created if they do not exist, but will not be symlinked.
+* `-d`: The stow directory where the package is located at.
+* `-S`: The package to be stowed.
+* `-t`: The target directory. This is usually `/home/user` in Linux and `/Users/user` in macOS.
+* `-v3`: Verbosity level 3.
