@@ -29,5 +29,10 @@ alias paper="cd ~/projects/blog/paperbat && nvim ."
 # see: https://gohugo.io/commands/hugo_server/ 
 alias hugos="hugo server --renderToMemory --buildDrafts --disableFastRender --navigateToChanged --printMemoryUsage --printPathWarnings --printUnusedTemplates --templateMetrics --gc"
 
-# use eza instead of ls
-alias ls="eza --color=always --long --git --no-filesize --icons=always --no-time --no-user --no-permissions"
+# eza: ls replacement
+# simple ls
+alias ls="eza --long --no-filesize --icons=always --no-time --no-user --no-permissions"
+# ls extended: date and git information
+alias lse="eza --long --git --icons=always --no-user --header --git-repos --no-filesize --no-permissions"
+# ls full: sizes of files and dirs, permissions, tree up to 2 levels
+alias lsf="eza --long --git --icons=always --no-user --header --git-repos -T -L 2 --total-size"
