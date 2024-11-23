@@ -24,8 +24,8 @@ From within `~`:
 `stow --no-folding -d ~/dotfiles -S nvim -t ~ -v3`
 
 * `--no-folding`: Stow only the _leaves_, not the branches.
-  This means that only files will be stowed,
-  whereas directories might be created if they do not exist, but will not be symlinked.
+  This means that only files will be stowed
+  —directories will be created if they do not exist, but won't be symlinked.
 * `-d`: The stow directory where the package is located at.
 * `-S`: The package to be stowed.
 * `-t`: The target directory. This is usually `/home/user` in Linux and `/Users/user` in macOS.
