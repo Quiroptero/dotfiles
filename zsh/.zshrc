@@ -25,9 +25,12 @@ ZSH_COMPDUMP="$ZSH/cache/zcompdump"
 plugins=(git web-search copypath copybuffer dirhistory history jsontools)
 
 # pre-Initialization stuff (OS-specific)
-source "$HOME/.zsh-os.zsh"
+source $HOME/.zsh-os-bef.zsh
 autoload -Uz compinit
 compinit
 
 # Initialization
 source $ZSH/oh-my-zsh.sh
+
+# post-Initialization stuff (OS-specific)}
+source $HOME/.zsh-os-aft.zsh
