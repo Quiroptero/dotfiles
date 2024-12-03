@@ -1,3 +1,4 @@
+echo "Loading $(basename "$0")..."
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -15,8 +16,6 @@ HIST_STAMPS="yyyy-mm-dd"
 
 # Path to custom folder
 ZSH_CUSTOM=$HOME/.zsh-custom
-# The custom folder contains files that define aliases.
-# For a full list of active aliases, run `alias`.
 
 # Make the zcompdump file disappear from HOME
 ZSH_COMPDUMP="$ZSH/cache/zcompdump"
@@ -31,3 +30,5 @@ compinit
 
 # Initialization
 source $ZSH/oh-my-zsh.sh
+
+echo "Finished loading $(basename "$0")"

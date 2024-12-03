@@ -12,9 +12,9 @@ Also, [dotfiles are meant to be forked](https://zachholman.com/2010/08/dotfiles-
 
 ## how are my dotfiles organized
 
-Dotfiles are kept inside directories named after the software they belong to.
-OS-specific dotfiles are kept with the same structure in mind,
-with an additional layer (directory) at the top, named after the OS they belong to.
+Files are kept within a directory named after the tool they belong to.
+Inside that directory the target directory structure is mimicked.
+When specific tags are needed, an additional layer is put in place.
 
 ## usage
 
