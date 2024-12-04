@@ -1,3 +1,5 @@
+start_time=$(date +%s.%N)
+echo "Loading $(basename -- "$0")..."
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -15,8 +17,6 @@ HIST_STAMPS="yyyy-mm-dd"
 
 # Path to custom folder
 ZSH_CUSTOM=$HOME/.zsh-custom
-# The custom folder contains files that define aliases.
-# For a full list of active aliases, run `alias`.
 
 # Make the zcompdump file disappear from HOME
 ZSH_COMPDUMP="$ZSH/cache/zcompdump"
@@ -25,12 +25,19 @@ ZSH_COMPDUMP="$ZSH/cache/zcompdump"
 plugins=(git web-search copypath copybuffer dirhistory history jsontools)
 
 # pre-Initialization stuff (OS-specific)
+echo "  Loading pre-start directives..."
 source $HOME/.zsh-os-bef.zsh
 autoload -Uz compinit
 compinit
 
 # Initialization
+echo "  Loading main configuration at $ZSH/oh-my-zsh.sh..."
 source $ZSH/oh-my-zsh.sh
 
 # post-Initialization stuff (OS-specific)}
+echo "  Loading post-start directives..."
 source $HOME/.zsh-os-aft.zsh
+
+end_time=$(date +%s.%N)
+runtime=$(echo "$end_time - $start_time" | bc)
+echo "Finished loading $(basename "$0") in $runtime seconds."
