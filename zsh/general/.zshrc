@@ -1,4 +1,5 @@
-echo "Loading $(basename "$0")..."
+start_time=$(date +%s.%N)
+echo "Loading $(basename -- "$0")..."
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -24,11 +25,15 @@ ZSH_COMPDUMP="$ZSH/cache/zcompdump"
 plugins=(git web-search copypath copybuffer dirhistory history jsontools)
 
 # pre-Initialization stuff (OS-specific)
+echo "  Loading pre-start directives..."
 source "$HOME/.zsh-os.zsh"
 autoload -Uz compinit
 compinit
 
 # Initialization
+echo "  Loading main configuration at $ZSH/oh-my-zsh.sh..."
 source $ZSH/oh-my-zsh.sh
 
-echo "Finished loading $(basename "$0")"
+end_time=$(date +%s.%N)
+runtime=$(echo "$end_time - $start_time" | bc)
+echo "Finished loading $(basename "$0") in $runtime seconds."

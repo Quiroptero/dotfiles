@@ -20,4 +20,4 @@ alias rate="rat && nvim ."
 
 # hugo
 # see: https://gohugo.io/commands/hugo_server/ 
-alias hugos="hugo server --renderToMemory --buildDrafts --disableFastRender --navigateToChanged --printMemoryUsage --printPathWarnings --printUnusedTemplates --templateMetrics --gc"
+alias hugos="hugo server --renderToMemory --disableFastRender --navigateToChanged --printMemoryUsage --printPathWarnings --printUnusedTemplates --templateMetrics --gc --enableGitInfo"
