@@ -54,7 +54,7 @@ return {
         )
         k.set(
             "n", "<leader>s,",
-            function() b.live_grep({ additional_args = function() return { "--no-ignore" } end }) end,
+            function() b.live_grep({ additional_args = function() return { "-uu" } end }) end,
             { desc = "[S]earch Live results in hidden [,] files" }
         )
 
