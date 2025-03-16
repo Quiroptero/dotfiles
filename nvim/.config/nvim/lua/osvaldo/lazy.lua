@@ -11,8 +11,8 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-require("lazy").setup({ { import = "osvaldo.plugins" }, { import = "osvaldo.plugins.lsp" } }, {
-  change_detection = {
-    notify = false,
-  },
-})
+require("lazy").setup(
+  { import = "osvaldo.plugins" },
+  { import = "osvaldo.plugins.lsp" },
+  { change_detection = { enabled = true, notify = true } }
+)
