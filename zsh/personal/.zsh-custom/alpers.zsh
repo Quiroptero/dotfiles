@@ -29,4 +29,5 @@ alias hugos="hugo server \
     --gc \
     --enableGitInfo \
     --disableBrowserError \
-    --templateMetricsHints"
+    --templateMetricsHints \
+    --environment development"
