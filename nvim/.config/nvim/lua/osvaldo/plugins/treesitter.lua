@@ -30,6 +30,7 @@ return {
         "gitignore",
         "vimdoc",
         "c",
+        "gotmpl",
       },
       incremental_selection = {
         enable = true,
@@ -40,6 +41,11 @@ return {
           node_decremental = "<bs>",
         },
       },
+    })
+
+    -- associate .html with gotmpl
+    vim.filetype.add({
+      pattern = { [".*%.html"] = "gotmpl" },
     })
   end,
 }

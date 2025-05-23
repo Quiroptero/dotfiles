@@ -57,7 +57,6 @@ return {
             function() b.live_grep({ additional_args = function() return { "-uu" } end }) end,
             { desc = "[S]earch Live results in hidden [,] files" }
         )
-
         k.set("n", "<leader>st", "<cmd>TodoTelescope<cr>", { desc = "[S]earch through all project [T]odos" })
         k.set("n", "<leader>sr", b.oldfiles, { desc = "[S]earch [R]ecent files" })
         k.set("n", "<leader>su", b.grep_string, { desc = "[S]earch string [U]nder cursor in cwd" })
@@ -76,9 +75,21 @@ return {
             function() b.current_buffer_fuzzy_find(themes.get_dropdown({ winblend = 10, previewer = false})) end,
             { desc = "[S]earch in [C]urrent buffer" }
         )
-        k.set("n", "<leader>sn", -- Shortcut for searching in Neovim config files
-            function() b.find_files({ cwd = vim.fn.stdpath("config") }) end,
-            { desc = "[S]earch [N]eovim files" }
+        k.set("n", "<leader>sn", -- Shortcut for searching Neovim config files
+            function() b.find_files({
+                cwd = vim.fn.stdpath("config"),
+                no_ignore = true, -- include .gitignored
+                hidden = true, -- include hidden files
+            }) end,
+            { desc = "[S]earch [N]eovim config files" }
+        )
+        k.set(
+            "n", "<leader>sm",
+            function() b.live_grep({
+                search_dirs = vim.fn.stdpath("config"),
+                additional_args = function() return { "-uu" } end,
+            }) end,
+            { desc = "[S]earch Live results in Neovi[M] config files" }
         )
     end,
 }
