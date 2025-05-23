@@ -30,4 +30,5 @@ alias hugos="hugo server \
     --enableGitInfo \
     --disableBrowserError \
     --templateMetricsHints \
-    --environment development"
+    --environment development \
+    --buildDrafts"
