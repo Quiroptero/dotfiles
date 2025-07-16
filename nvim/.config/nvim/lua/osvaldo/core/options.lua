@@ -24,6 +24,18 @@ opt.cursorline = true
 opt.termguicolors = true
 opt.background = "dark" -- colorschemes that can be light or dark will be made dark
 opt.signcolumn = "yes" -- show sign column so that text doesn't shift
+opt.foldcolumn = "1" -- display folding marks in one column
+opt.foldenable = true -- enable folding
+opt.foldmethod = "expr" -- form a fold according to an expression
+opt.foldexpr = "v:lua.vim.lsp.foldexpr()" -- fold according to LSP directives
+opt.foldlevel = 99 -- all folds open
+opt.foldlevelstart = 99 -- all folds open when starting to edit a new buffer
+opt.fillchars = {
+    foldclose = "›",
+    foldopen = "⌄",
+    foldsep = "|",
+}
+opt.colorcolumn = "120"
 
 -- backspace
 opt.backspace = "indent,eol,start" -- allow backspace on indent, end of line or insert mode start position
