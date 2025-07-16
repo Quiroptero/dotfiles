@@ -21,6 +21,8 @@ alias rate="rat && nvim ."
 # hugo
 # see: https://gohugo.io/commands/hugo_server/ 
 alias hugos="hugo server \
+    --disableFastRender \
+    --buildFuture \
     --navigateToChanged \
     --printMemoryUsage \
     --printPathWarnings \
