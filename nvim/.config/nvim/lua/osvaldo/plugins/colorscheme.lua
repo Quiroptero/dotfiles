@@ -70,35 +70,78 @@
 --   end
 -- }
 
+-- return {
+--     "rebelot/kanagawa.nvim",
+--     priority = 1000,
+--     config = function()
+--         -- Default options
+--         require('kanagawa').setup({
+--             compile = false,             -- enable compiling the colorscheme
+--             undercurl = true,            -- enable undercurls
+--             commentStyle = { italic = true },
+--             functionStyle = {},
+--             keywordStyle = { italic = true},
+--             statementStyle = { bold = true },
+--             typeStyle = {},
+--             transparent = false,         -- do not set background color
+--             dimInactive = false,         -- dim inactive window `:h hl-NormalNC`
+--             terminalColors = true,       -- define vim.g.terminal_color_{0,17}
+--             colors = {                   -- add/modify theme and palette colors
+--                 palette = { dragonAsh = "#6A9589" },
+--                 theme = { wave = {}, lotus = {}, dragon = {}, all = {} },
+--             },
+--             overrides = function(colors) -- add/modify highlights
+--                 return {}
+--             end,
+--             theme = "dragon",              -- Load "wave" theme when 'background' option is not set
+--             background = {               -- map the value of 'background' option to a theme
+--                 dark = "dragon",           -- try "dragon" !
+--                 light = "lotus"
+--             },
+--         })
+--         vim.cmd("colorscheme kanagawa")
+--     end
+-- }
+
 return {
-    "rebelot/kanagawa.nvim",
+    "catppuccin/nvim",
     priority = 1000,
     config = function()
-        -- Default options
-        require('kanagawa').setup({
-            compile = false,             -- enable compiling the colorscheme
-            undercurl = true,            -- enable undercurls
-            commentStyle = { italic = true },
-            functionStyle = {},
-            keywordStyle = { italic = true},
-            statementStyle = { bold = true },
-            typeStyle = {},
-            transparent = false,         -- do not set background color
-            dimInactive = false,         -- dim inactive window `:h hl-NormalNC`
-            terminalColors = true,       -- define vim.g.terminal_color_{0,17}
-            colors = {                   -- add/modify theme and palette colors
-                palette = { dragonAsh = "#6A9589" },
-                theme = { wave = {}, lotus = {}, dragon = {}, all = {} },
+        require("catppuccin").setup({
+            no_italic = true,
+            term_colors = true,
+            transparent_background = false,
+            styles = {
+                comments = {},
+                conditionals = {},
+                loops = {},
+                functions = {},
+                keywords = {},
+                strings = {},
+                variables = {},
+                numbers = {},
+                booleans = {},
+                properties = {},
+                types = {},
             },
-            overrides = function(colors) -- add/modify highlights
-                return {}
-            end,
-            theme = "dragon",              -- Load "wave" theme when 'background' option is not set
-            background = {               -- map the value of 'background' option to a theme
-                dark = "dragon",           -- try "dragon" !
-                light = "lotus"
+            color_overrides = {
+                mocha = {
+                    base = "#000000",
+                    mantle = "#000000",
+                    crust = "#000000",
+                },
+            },
+            integrations = {
+                telescope = {
+                    enabled = true,
+                    style = "nvchad",
+                },
+                dropbar = {
+                    enabled = true,
+                    color_mode = true,
+                },
             },
         })
-        vim.cmd("colorscheme kanagawa")
+        vim.cmd("colorscheme catppuccin")
     end
 }
