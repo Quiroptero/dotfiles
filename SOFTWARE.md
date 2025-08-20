@@ -11,14 +11,17 @@
 * gnu stow
 * oh my zsh
 * rclone
-* liferea
 * tellico
 * visidata
 * delta
 * bat
 * twine
 * eza
-* fzf & fzf-git
+* fzf & fzf-git & fd
 * pyenv & pyenv-virtualenv
 * thefuck
 * zoxide
+* commitmono font
+* asciinema & agg
+* node (npm capabilities)
+* presenterm
