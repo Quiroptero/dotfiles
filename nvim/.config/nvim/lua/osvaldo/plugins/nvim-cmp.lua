@@ -2,7 +2,6 @@ return {
 	"hrsh7th/nvim-cmp",
 	event = "InsertEnter",
 	dependencies = {
-        "neovim/nvim-lspconfig",
 		"hrsh7th/cmp-buffer", -- source for text in buffer
 		"hrsh7th/cmp-path", -- source for file system paths
         "hrsh7th/cmp-nvim-lsp", -- utility function to expand neovim's default LSP capabilities by leveraging nvim-cmp
@@ -17,11 +16,6 @@ return {
 	},
 	config = function()
 		local cmp = require("cmp")
-
-        local lspconfig = require("lspconfig")
-        local capabilities = require("cmp_nvim_lsp").default_capabilities()
-        -- python LSP
-        lspconfig.pylsp.setup({ capabilities = capabilities })
 
 		-- loads vscode style snippets from installed plugins (e.g. friendly-snippets)
 		require("luasnip.loaders.from_vscode").lazy_load()

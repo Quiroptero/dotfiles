@@ -1,5 +1,5 @@
 vim.cmd("let g:netrw_liststyle = 3")
-vim.cmd("let g:python3_host_prog = '/home/osvaldo/.pyenv/versions/3.10.4/envs/nvim/bin/python3'")
+vim.cmd("let g:python3_host_prog = '~/.pyenv/versions/nvim/bin/python3'")
 
 local opt = vim.opt
 
@@ -27,7 +27,7 @@ opt.signcolumn = "yes" -- show sign column so that text doesn't shift
 opt.foldcolumn = "1" -- display folding marks in one column
 opt.foldenable = true -- enable folding
 opt.foldmethod = "expr" -- form a fold according to an expression
-opt.foldexpr = "v:lua.vim.lsp.foldexpr()" -- fold according to LSP directives
+opt.foldexpr = "v:lua.vim.treesitter.foldexpr()" -- fold according to LSP directives
 opt.foldlevel = 99 -- all folds open
 opt.foldlevelstart = 99 -- all folds open when starting to edit a new buffer
 opt.fillchars = {
@@ -41,6 +41,7 @@ opt.colorcolumn = "120"
 opt.backspace = "indent,eol,start" -- allow backspace on indent, end of line or insert mode start position
 
 -- clipboard
+-- unnamedplus is actually annoying, but I haven't figured out yet a better approach
 opt.clipboard:append("unnamedplus") -- use system clipboard as default register
 
 -- split windows

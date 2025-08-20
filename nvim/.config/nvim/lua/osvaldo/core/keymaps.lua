@@ -17,8 +17,8 @@ keymap.set("n", "<leader>wx", "<cmd>close<CR>", { desc = "Close current [W]indow
 -- tab management
 keymap.set("n", "<leader>to", "<cmd>tabnew<CR>", { desc = "Open new tab" })
 keymap.set("n", "<leader>tx", "<cmd>tabclose<CR>", { desc = "Close current tab" })
-keymap.set("n", "<leader>ty", "<cmd>tabn<CR>", { desc = "Go to next tab" })
-keymap.set("n", "<leader>tr", "<cmd>tabp<CR>", { desc = "Go to previous tab" })
+keymap.set("n", "<leader>l", "<cmd>tabn<CR>", { desc = "Go to next tab. Equivalent to gt" })
+keymap.set("n", "<leader>h", "<cmd>tabp<CR>", { desc = "Go to previous tab. Equivalent to gT" })
 keymap.set("n", "<leader>tf", "<cmd>tabnew %<CR>", { desc = "Open current buffer in new tab" })
 
 -- zpell checking
@@ -29,3 +29,20 @@ keymap.set("n", "<leader>z2", "<cmd>setlocal spell spelllang=en<CR>", { desc = "
 -- insert ticket ID
 -- local ticket = require("osvaldo.core.utils.ticket_id")
 -- keymap.set("n", "<leader>J", ticket.insert, { desc = "Insert [TICKET-ID] from branch name" })
+
+-- LSP keymaps
+local group = vim.api.nvim_create_augroup("LspMappings", { clear = true })
+vim.api.nvim_create_autocmd("LspAttach", {
+	group = group,
+	callback = function(args)
+		local opts = { buffer = args.buf, silent = true }
+        
+        -- See `:help vim.lsp.*` for documentation on any of the below functions
+
+        opts.desc = "[g]o to [d]efinition"
+        keymap.set("n", "gd", vim.lsp.buf.definition, opts)
+
+        opts.desc = "[g]o to [D]eclaration"
+        keymap.set("n", "gd", vim.lsp.buf.declaration, opts)
+    end
+})
