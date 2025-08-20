@@ -13,3 +13,6 @@ alias ls="eza --long --no-filesize --icons=always --no-time --no-user --no-permi
 alias lse="eza --long --git --icons=always --no-user --header --git-repos --no-filesize --no-permissions"
 # ls full: sizes of files and dirs, permissions, tree up to 2 levels
 alias lsf="eza --long --git --icons=always --no-user --header --git-repos -T -L 2 --total-size"
+
+# ipython
+alias ip="ipython"
