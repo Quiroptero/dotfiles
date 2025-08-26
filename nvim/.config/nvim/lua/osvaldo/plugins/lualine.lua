@@ -1,3 +1,37 @@
+-- functions to get word count and reading time taken from: https://www.youtube.com/watch?v=VEnGcOcW9bM
+
+local function get_wordcount()
+    local word_count = 0
+
+    if vim.fn.mode():find("[vV]") then
+        word_count = vim.fn.wordcount().visual_words
+    else
+        word_count = vim.fn.wordcount().words
+    end
+    
+    return word_count
+end
+
+local function wordcount()
+    local label = "word"
+    local word_count = get_wordcount()
+
+    if word_count > 1 then
+        label = label .. "s"
+    end
+
+    return word_count .. " " .. label
+end
+
+local function readingtime()
+    -- assuming 200 words read per minute
+    return tostring(math.ceil(get_wordcount() / 200.0)) .. " min"
+end
+
+local function is_prose()
+    return vim.bo.filetype == "markdown" or vim.bo.filetype == "text"
+end
+
 return {
     "nvim-lualine/lualine.nvim",
     config = function()
@@ -138,6 +172,10 @@ return {
         ins_left { 'location' }
 
         ins_left { 'progress', color = { fg = colors.fg, gui = 'bold' } }
+
+        ins_left { wordcount, cond = is_prose }
+
+        ins_left { readingtime, cond = is_prose }
 
         ins_left {
           'diagnostics',
