@@ -141,7 +141,25 @@ return {
                     color_mode = true,
                 },
             },
+            custom_highlights = function(colors)
+                return {
+                    DeleteThatShit = { fg = colors.red, style = { "bold" } },
+                }
+            end,
         })
         vim.cmd("colorscheme catppuccin")
+
+        -- apply custom highlights only on markdown files
+        local words = require("osvaldo.config.banned_words")
+
+        vim.api.nvim_create_autocmd({"BufEnter", "BufWinEnter", "TextChanged", "InsertLeave"}, {
+            pattern = "*.md",
+            callback = function()
+                vim.fn.clearmatches()
+                for _, w in ipairs(words) do
+                    vim.fn.matchadd("DeleteThatShit", "\\c\\<" .. w .. "\\>")
+                end
+            end,
+        })
     end
 }
