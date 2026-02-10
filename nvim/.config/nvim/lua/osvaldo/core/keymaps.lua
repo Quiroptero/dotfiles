@@ -17,8 +17,8 @@ keymap.set("n", "<leader>wx", "<cmd>close<CR>", { desc = "Close current [W]indow
 -- tab management
 keymap.set("n", "<leader>to", "<cmd>tabnew<CR>", { desc = "Open new tab" })
 keymap.set("n", "<leader>tx", "<cmd>tabclose<CR>", { desc = "Close current tab" })
-keymap.set("n", "<leader>l", "<cmd>tabn<CR>", { desc = "Go to next tab. Equivalent to gt" })
-keymap.set("n", "<leader>h", "<cmd>tabp<CR>", { desc = "Go to previous tab. Equivalent to gT" })
+--keymap.set("n", "<leader>l", "<cmd>tabn<CR>", { desc = "Go to next tab. Equivalent to gt" })
+--keymap.set("n", "<leader>h", "<cmd>tabp<CR>", { desc = "Go to previous tab. Equivalent to gT" })
 keymap.set("n", "<leader>tf", "<cmd>tabnew %<CR>", { desc = "Open current buffer in new tab" })
 
 -- zpell checking
