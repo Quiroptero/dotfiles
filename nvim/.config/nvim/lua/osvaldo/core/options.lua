@@ -35,7 +35,7 @@ opt.fillchars = {
     foldopen = "⌄",
     foldsep = "|",
 }
-opt.colorcolumn = "120"
+opt.colorcolumn = "80"
 
 -- backspace
 opt.backspace = "indent,eol,start" -- allow backspace on indent, end of line or insert mode start position
