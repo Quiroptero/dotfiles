@@ -1,7 +1,7 @@
 [init]
 	defaultBranch = main
 [core]
-	editor = /opt/homebrew/bin/nvim
+	editor = /usr/bin/nvim
 	pager = delta
 	quotepath = false
 [interactive]
@@ -12,7 +12,7 @@
     path = ~/.gitconfig.user
 [delta]
     navigate = true # use n and N to move between diff sections
-    side-by-side = true
+    side-by-side = true # when true this wraps long lines, set to false to see details
 [merge]
     conflicstyle = zdiff3
 [diff]
