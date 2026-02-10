@@ -25,3 +25,5 @@
 * asciinema & agg
 * node (npm capabilities)
 * presenterm
+* ripgrep
+* hugo
