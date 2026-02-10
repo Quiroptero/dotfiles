@@ -1,4 +1,5 @@
 # aliases to be used in personal machines
+export BLOG="$HOME/projects/blog/quiroptero.blog"
 
 # exiftool
 alias exifs="exiftool -T -filename -datetimeoriginal -focallength -fnumber -iso -shutterspeed"
@@ -7,7 +8,7 @@ alias exifs="exiftool -T -filename -datetimeoriginal -focallength -fnumber -iso 
 # reminder for myself: "e" stands for "edit"
 alias blog="cd ~/projects/blog/quiroptero.blog/main"
 alias bloge="blog && nvim ."
-alias blogd="cd ~/projects/blog/quiroptero.blog/draft"
+alias blogd="cd $BLOG/draft"
 alias blogde="blogd && nvim ."
 alias dot="cd ~/dotfiles"
 alias dote="dot && nvim ."
