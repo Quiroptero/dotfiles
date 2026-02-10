@@ -1,3 +1,6 @@
 # thefuck alias
-eval $(thefuck --alias)
-eval $(thefuck --alias ff)
+if command -v thefuck
+then
+    eval $(thefuck --alias)
+    eval $(thefuck --alias ff)
+fi
