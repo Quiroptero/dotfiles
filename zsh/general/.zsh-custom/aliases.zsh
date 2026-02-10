@@ -16,3 +16,12 @@ alias lsf="eza --long --git --icons=always --no-user --header --git-repos -T -L 
 
 # ipython
 alias ip="ipython"
+
+# music: mpd + rmpc
+alias music="rmpc"
+
+# unicode helper (cheatsheet)
+alias u="$HOME/s/u"
+
+# fibo
+alias fibo="$HOME/fibo/fibo.py"
