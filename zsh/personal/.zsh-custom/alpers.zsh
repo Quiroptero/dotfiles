@@ -1,22 +1,21 @@
 # aliases to be used in personal machines
-export BLOG="$HOME/projects/blog/quiroptero.blog"
+export BLOG="$HOME/w/quiroptero.blog"
+export BOOKS="$HOME/c/books"
+export MONOCROMO_SRC_DIR="$HOME/w/monocromo.blog/source"
+export MONOCROMO_DST_DIR="$HOME/w/monocromo.blog/public"
 
 # exiftool
 alias exifs="exiftool -T -filename -datetimeoriginal -focallength -fnumber -iso -shutterspeed"
 
 # navigation
 # reminder for myself: "e" stands for "edit"
-alias blog="cd ~/projects/blog/quiroptero.blog/main"
+alias blog="cd $BLOG/main"
 alias bloge="blog && nvim ."
 alias blogd="cd $BLOG/draft"
 alias blogde="blogd && nvim ."
-alias dot="cd ~/dotfiles"
+alias dot="cd $HOME/dotfiles"
 alias dote="dot && nvim ."
-alias publ="cd ~/projects/escribir/publicable"
-alias puble="publ && nvim ."
-alias lore="cd ~/projects/website/omiranda.dev"
-alias loree="lore && nvim ."
-alias rat="cd ~/projects/blog/ratpenat"
+alias rat="cd $HOME/nox/ratpenat"
 alias rate="rat && nvim ."
 
 # hugo
