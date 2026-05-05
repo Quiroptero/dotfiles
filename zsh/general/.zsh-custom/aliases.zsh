@@ -25,3 +25,6 @@ alias u="$HOME/s/u"
 
 # fibo
 alias fibo="$HOME/fibo/fibo.py"
+
+# ropero
+alias ropero="$HOME/s/ropero/ropero.py"
