@@ -1,5 +1,4 @@
 vim.cmd("let g:netrw_liststyle = 3")
-vim.cmd("let g:python3_host_prog = '~/.pyenv/versions/nvim/bin/python3'")
 
 local opt = vim.opt
 
