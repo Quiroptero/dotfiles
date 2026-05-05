@@ -1,3 +1,3 @@
-require("osvaldo.core")
-require("osvaldo.lazy")
-require("osvaldo.config")
+require("core")
+require("lazy")
+require("config")
