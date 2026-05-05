@@ -3,6 +3,10 @@
 {{- $work := promptBoolOnce . "work" "Is this a work computer?" -}}
 
 [data]
-    name = {{ $name | quote }}
-    email = {{ $email | quote }}
-    work = {{ $work }}
+    xdgCacheDir  = "{{ .chezmoi.homeDir }}/.cache"
+    xdgConfigDir = "{{ .chezmoi.homeDir }}/.config"
+    xdgDataDir   = "{{ .chezmoi.homeDir }}/.local/share"
+    xdgStateDir  = "{{ .chezmoi.homeDir }}/.local/state"
+    name         = {{ $name | quote }}
+    email        = {{ $email | quote }}
+    work         = {{ $work }}
