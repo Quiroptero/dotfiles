@@ -8,8 +8,6 @@
 	diffFilter = delta --color-only
 [worktree]
 	guessRemote = true
-[include]
-    path = ~/.gitconfig.user
 [delta]
     navigate = true # use n and N to move between diff sections
     side-by-side = true # when true this wraps long lines, set to false to see details
