@@ -1,0 +1,7 @@
+export XDG_CACHE_HOME={{ .xdgCacheDir | quote }}
+export XDG_CONFIG_HOME={{ .xdgConfigDir | quote }}
+export XDG_DATA_HOME={{ .xdgDataDir | quote }}
+export XDG_STATE_HOME={{ .xdgStateDir | quote }}
+
+# zsh uses this to look up for .zshrc
+export ZDOTDIR="${XDG_CONFIG_HOME}/zsh"
