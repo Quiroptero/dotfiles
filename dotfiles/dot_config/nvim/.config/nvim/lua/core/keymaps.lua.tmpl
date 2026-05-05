@@ -26,9 +26,11 @@ keymap.set("n", "<leader>z0", "<cmd>setlocal nospell<CR>", { desc = "Disable spe
 keymap.set("n", "<leader>z1", "<cmd>setlocal spell spelllang=es<CR>", { desc = "Enable spell checking for Spanish in the current buffer" })
 keymap.set("n", "<leader>z2", "<cmd>setlocal spell spelllang=en<CR>", { desc = "Enable spell checking for English in the current buffer" })
 
+{{ if $work }}
 -- insert ticket ID
--- local ticket = require("osvaldo.core.utils.ticket_id")
--- keymap.set("n", "<leader>J", ticket.insert, { desc = "Insert [TICKET-ID] from branch name" })
+local ticket = require("core.utils.ticket_id")
+keymap.set("n", "<leader>J", ticket.insert, { desc = "Insert [TICKET-ID] from branch name" })
+{{ end }}
 
 -- LSP keymaps
 local group = vim.api.nvim_create_augroup("LspMappings", { clear = true })

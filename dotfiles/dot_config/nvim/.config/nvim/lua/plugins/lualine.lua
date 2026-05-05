@@ -17,7 +17,7 @@ local function wordcount()
     -- the following uses the local function defined above instead
     -- local word_count = get_wordcount()
 
-    local utils = require("osvaldo.core.utils")
+    local utils = require("core.utils")
     local word_count = utils.wordcount_clean()
 
     if word_count > 1 then

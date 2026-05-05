@@ -13,7 +13,7 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
     spec = {
-        { import = "osvaldo.plugins" },
-        { import = "osvaldo.plugins.lsp" }
+        { import = "plugins" },
+        { import = "plugins.lsp" }
     },
 })

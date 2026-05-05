@@ -1,1 +1,1 @@
-require("osvaldo.config.banned_words")
+require("config.banned_words")

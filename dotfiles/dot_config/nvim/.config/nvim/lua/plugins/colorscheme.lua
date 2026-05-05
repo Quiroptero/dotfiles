@@ -150,7 +150,7 @@ return {
         vim.cmd("colorscheme catppuccin")
 
         -- apply custom highlights only on markdown files
-        local words = require("osvaldo.config.banned_words")
+        local words = require("config.banned_words")
 
         vim.api.nvim_create_autocmd({"BufEnter", "BufWinEnter", "TextChanged", "InsertLeave"}, {
             pattern = "*.md",
