@@ -41,3 +41,7 @@ source $HOME/.zsh-os-aft.zsh
 end_time=$(date +%s.%N)
 runtime=$(echo "$end_time - $start_time" | bc)
 echo "Finished loading $(basename -- "$0") in $runtime seconds."
+
+. "$HOME/.atuin/bin/env"
+
+eval "$(atuin init zsh)"
