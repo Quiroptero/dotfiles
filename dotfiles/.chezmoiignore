@@ -1,0 +1,6 @@
+{{- if ne .chezmoi.os "linux" }}
+.config/mpd/
+.config/rmpc/
+.config/nvim/spell/
+.config/nvim/lua/config/
+{{- end }}
