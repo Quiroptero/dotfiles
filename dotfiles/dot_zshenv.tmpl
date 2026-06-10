@@ -5,3 +5,10 @@ export XDG_STATE_HOME={{ .xdgStateDir | quote }}
 
 # zsh uses this to look up for .zshrc
 export ZDOTDIR="${XDG_CONFIG_HOME}/zsh"
+
+# reminder for myself
+#
+# config: versioned, portable
+# data: keep it
+# state: machine-local, can lose it
+# cache: disposable
