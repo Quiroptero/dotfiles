@@ -46,7 +46,7 @@ return {
 
     -- associate .html with gotmpl
     vim.filetype.add({
-      pattern = { [".*%.html"] = "gotmpl" },
+      pattern = { [".*%.html"] = "gotmpl", [".*%.tmpl"] = "gotmpl" },
     })
   end,
 }
