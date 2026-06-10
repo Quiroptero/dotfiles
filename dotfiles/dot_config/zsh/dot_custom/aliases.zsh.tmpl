@@ -1,0 +1,75 @@
+# chezmoi
+alias cz="chezmoi"
+compdef cz=chezmoi  # `cz <TAB>` uses chezmoi completions
+
+# git
+alias glog="git log --graph --pretty=format:'%Cred%h%Creset %an: %s - %Creset %C(yellow)%d%Creset %Cgreen(%cr)%Creset' --abbrev-commit --date=relative"
+alias gs="git status -sb"
+
+# eza: ls replacement
+if command -v eza
+then
+    # simple
+    alias ls="eza --long --no-filesize --icons=always --no-time --no-user --no-permissions"
+    # extended: date and git information
+    alias lse="eza --long --git --icons=always --no-user --header --git-repos --no-filesize --no-permissions"
+    # full: sizes of files and dirs, permissions, tree up to 2 levels
+    alias lsf="eza --long --git --icons=always --no-user --header --git-repos -T -L 2 --total-size"
+fi
+
+# ipython
+alias ip="ipython"
+
+{{ if not .work }}
+
+{{ if eq .chezmoi.os "linux" }}
+alias pbcopy="xclip -selection clipboard"
+{{ end }}
+
+export BLOG="$HOME/w/quiroptero.blog"
+export BOOKS="$HOME/c/books"
+export MONOCROMO_SRC_DIR="$HOME/w/monocromo.blog/source"
+export MONOCROMO_DST_DIR="$HOME/w/monocromo.blog/public"
+
+alias blog="cd $BLOG/main"
+alias bloge="blog && nvim ."
+alias blogd="cd $BLOG/draft"
+alias blogde="blogd && nvim ."
+alias dot="cd $HOME/dotfiles"
+alias dote="dot && nvim ."
+alias rat="cd $HOME/nox/ratpenat"
+alias rate="rat && nvim ."
+
+# hugo
+# see: https://gohugo.io/commands/hugo_server/ 
+alias hugos="hugo server \
+    --disableFastRender \
+    --buildFuture \
+    --navigateToChanged \
+    --printMemoryUsage \
+    --printPathWarnings \
+    --printUnusedTemplates \
+    --templateMetrics \
+    --gc \
+    --enableGitInfo \
+    --disableBrowserError \
+    --templateMetricsHints \
+    --environment development \
+    --buildDrafts"
+
+# music: mpd + rmpc
+alias music="rmpc"
+
+# unicode helper (cheatsheet)
+alias u="$HOME/s/u"
+
+# fibo
+alias fibo="$HOME/fibo/fibo.py"
+
+# ropero
+alias ropero="$HOME/s/ropero/ropero.py"
+
+# exiftool
+alias exifs="exiftool -T -filename -datetimeoriginal -focallength -fnumber -iso -shutterspeed"
+
+{{ end }}
