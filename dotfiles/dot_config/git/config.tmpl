@@ -1,3 +1,6 @@
+[user]
+    name = {{ .name | quote }}
+    email = {{ .git_email | quote }}
 [init]
 	defaultBranch = main
 [core]
