@@ -1,6 +1,6 @@
-{{- $name := promptStringOnce . "name" "Your name" -}}
-{{- $email := promptStringOnce . "email" "Email address" -}}
-{{- $work := promptBoolOnce . "work" "Is this a work computer?" -}}
+{{- $name := promptStringOnce . "name" "Name" -}}
+{{- $git_email := promptStringOnce . "email" "Email address for git operations" -}}
+{{- $work := promptBoolOnce . "work" "Is this a computer to be used at work (y/n)" -}}
 
 [data]
     xdgCacheDir  = "{{ .chezmoi.homeDir }}/.cache"
@@ -8,5 +8,5 @@
     xdgDataDir   = "{{ .chezmoi.homeDir }}/.local/share"
     xdgStateDir  = "{{ .chezmoi.homeDir }}/.local/state"
     name         = {{ $name | quote }}
-    email        = {{ $email | quote }}
+    git_email    = {{ $git_email | quote }}
     work         = {{ $work }}
