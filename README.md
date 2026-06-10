@@ -1,32 +1,57 @@
 # dotfiles
 
-I manage my dotfiles with the help of the [GNU Stow package](https://www.gnu.org/software/stow/).
+I use [chezmoi](https://www.chezmoi.io/) to manage my dotfiles.
+
+Although
+[dotfiles are meant to be forked](https://zachholman.com/2010/08/dotfiles-are-meant-to-be-forked/),
+mine are heavily customised and thus are useful only for me.
+Everyone is welcomed to take a look and learn a thing or two.
+
+## software my setup relies on
+
+> [!NOTE]
+> This is a list to remind myself of software I might want to install in fresh environments.
+> It is not a comprehensive list and not all of these are represented in the dotfiles.
+> In the future, I'd like to have this automatically installed with a bash script. Maybe.
+
+* asciinema & agg
+* atuin
+* bat
+* broot
+* chezmoi
+* commitmono font
+* delta
+* eza
+* fzf & fzf-git & fd
+* gnu stow
+* homebrew
+* hugo
+* kitty
+* neovim
+* node (npm capabilities)
+* oh my zsh
+* presenterm
+* pyenv & pyenv-virtualenv
+* rclone
+* ripgrep
+* tellico
+* twine
+* visidata
+
+## what I used before chezmoi
+
+### stow
+
+The [GNU Stow package](https://www.gnu.org/software/stow/)
+is a great option when you don't need templating.
+
 [Bastian Venthur's](https://venthur.de/2021-12-19-managing-dotfiles-with-stow.html)
 and [Brandon Invergo's](https://brandon.invergo.net/news/2012-05-26-using-gnu-stow-to-manage-your-dotfiles.html)
 articles were of much help when deciding this setup.
-I previously used a
-[different](https://news.ycombinator.com/item?id=11070797)
-[solution](https://www.atlassian.com/git/tutorials/dotfiles).
 
-Also, [dotfiles are meant to be forked](https://zachholman.com/2010/08/dotfiles-are-meant-to-be-forked/).
+### bare git repository
 
-## how are my dotfiles organized
+A simple and elegant way to manage dotfiles is using a bare git repository.
 
-Files are kept within a directory named after the tool they belong to.
-Inside that directory the target directory structure is mimicked.
-When specific tags are needed, an additional layer is put in place.
-
-## usage
-
-One-line example to remind myself on how to use this setup.
-From within `~`:
-
-`stow --no-folding -d ~/dotfiles -S nvim -t ~ -v3`
-
-* `--no-folding`: Stow only the _leaves_, not the branches.
-  This means that only files will be stowed
-  —directories will be created if they do not exist, but won't be symlinked.
-* `-d`: The stow directory where the package is located at.
-* `-S`: The package to be stowed.
-* `-t`: The target directory. This is usually `/home/user` in Linux and `/Users/user` in macOS.
-* `-v3`: Verbosity level 3.
+* [Thread in HN](https://news.ycombinator.com/item?id=11070797)
+* [Article explaining the setup](https://www.atlassian.com/git/tutorials/dotfiles)
