@@ -141,14 +141,17 @@ return {
                     color_mode = true,
                 },
             },
+            {{ if not .work }}
             custom_highlights = function(colors)
                 return {
                     DeleteThatShit = { fg = colors.red, style = { "bold" } },
                 }
             end,
+            {{ end }}
         })
         vim.cmd("colorscheme catppuccin")
 
+        {{ if not .work }}
         -- apply custom highlights only on markdown files
         local words = require("config.banned_words")
 
@@ -161,5 +164,6 @@ return {
                 end
             end,
         })
+        {{ end }}
     end
 }
