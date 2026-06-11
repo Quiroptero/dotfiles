@@ -6,7 +6,7 @@
 [core]
     {{ if eq .chezmoi.os "linux" }}
 	editor = /usr/bin/nvim
-    {{ else if eq .chzemoi.os "darwin" }}
+    {{ else if eq .chezmoi.os "darwin" }}
     editor = /opt/homebrew/bin/nvim
     {{ end }}
 	pager = delta
