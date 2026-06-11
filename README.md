@@ -7,6 +7,23 @@ Although
 mine are heavily customised and thus are useful only for me.
 Everyone is welcomed to take a look and learn a thing or two.
 
+## instructions
+
+> [!IMPORTANT]
+> This section is a work in progress...
+
+### install oh-my-zsh in a specific location
+
+```sh
+ZSH=~/.config/zsh/.oh-my-zsh sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" --unattended --keep-zshrc
+```
+
+Finally, apply the dotfiles:
+
+```sh
+chezmoi init --apply Quiroptero
+```
+
 ## software my setup relies on
 
 > [!NOTE]
