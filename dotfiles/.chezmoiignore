@@ -2,5 +2,6 @@
 .config/mpd/
 .config/rmpc/
 .config/nvim/spell/
-.config/nvim/lua/config/
+.config/nvim/lua/config/banned_words.lua
+.config/nvim/lua/config/init.lua
 {{- end }}
