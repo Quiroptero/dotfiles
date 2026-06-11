@@ -41,7 +41,7 @@ function br {
     fi
 }
 
-if command -v broot
+if command -v broot >/dev/null 2>&1
 then
     function tree {
          br -c :pt "$@"
@@ -50,11 +50,7 @@ fi
 {{ end }}
 
 # atuin
-if command -v atuin
-then
-    . "$HOME/.atuin/bin/env"
-    eval "$(atuin init zsh)"
-fi
+[[ -f "$HOME/.atuin/bin/env" ]] && . "$HOME/.atuin/bin/env" && eval "$(atuin init zsh)"
 
 # fzf + fd
 if command -v fzf >/dev/null 2>&1 && command -v fd >/dev/null 2>&1; then

@@ -7,7 +7,7 @@ alias glog="git log --graph --pretty=format:'%Cred%h%Creset %an: %s - %Creset %C
 alias gs="git status -sb"
 
 # eza: ls replacement
-if command -v eza
+if command -v eza >/dev/null 2>&1
 then
     # simple
     alias ls="eza --long --no-filesize --icons=always --no-time --no-user --no-permissions"
