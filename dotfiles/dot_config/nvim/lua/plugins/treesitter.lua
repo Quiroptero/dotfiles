@@ -2,7 +2,6 @@
 return {
     "nvim-treesitter/nvim-treesitter",
     lazy = false,
-    build = ":TSUpdate",
     event = { "VimEnter" },
     dependencies = { "windwp/nvim-ts-autotag" },
     config = function()
