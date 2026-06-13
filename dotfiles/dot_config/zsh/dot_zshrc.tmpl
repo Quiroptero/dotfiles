@@ -19,7 +19,11 @@ HISTFILE=$XDG_STATE_HOME/zsh/history
 # ===== GENERAL CONFIGURATION =================================================
 
 # Theme
+{{ if .work }}
+ZSH_THEME="macovsky"
+{{ else }}
 ZSH_THEME="fino-time"
+{{ end }}
 
 # Auto-update behavior: disabled, auto or reminder
 zstyle ':omz:update' mode reminder  # just remind me to update when it's time
