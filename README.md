@@ -10,7 +10,8 @@ Everyone is welcomed to take a look and learn a thing or two.
 ## instructions
 
 > [!IMPORTANT]
-> This section is a work in progress...
+> This section is a work in progress and it can be plainly wrong.
+> I'll update it as I discover the right order.
 
 ### install oh-my-zsh in a specific location
 
@@ -18,11 +19,38 @@ Everyone is welcomed to take a look and learn a thing or two.
 ZSH=~/.config/zsh/.oh-my-zsh sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" --unattended --keep-zshrc
 ```
 
-Finally, apply the dotfiles:
+### install pyenv and pyenv-virtualenv
+
+
+### install neovim
+
+#### make sure tree-sitter is installed:
+
+```sh
+brew install tree-sitter
+brew install tree-sitter-cli
+```
+
+### apply dotfiles
 
 ```sh
 chezmoi init --apply Quiroptero
 ```
+
+## troubleshooting
+
+### homebrew
+
+```sh
+brew --prefix <package>  # where did brew put my package?
+brew list <package> | grep bin/  # does the formula ship a bin
+brew info <package>  # always worth a look!
+```
+
+## further reading
+
+* https://marcusb.org/posts/2025/01/frictionless-dotfile-management-with-chezmoi/
+
 
 ## software my setup relies on
 
