@@ -31,6 +31,38 @@ brew install tree-sitter
 brew install tree-sitter-cli
 ```
 
+### commitmono font
+
+> [!NOTE]
+> A copy of commitmono is on `resources/commitmono/commitmono.zip`.
+
+To replicate it, follow these steps:
+
+Go to [commitmono.com](https://commitmono.com).
+Paste the settings from `resources/commitmono/custom-settings.json`
+in the `Retrieve custom settings` section of the `07 Customize` tab.
+Click on `Download custom for dev`.
+
+#### fix commitmono not recognized as monospace
+
+`cd` to dir of downloaded fonts and execute the following commands:
+
+```shell
+# install fonttools
+python -m venv venv
+venv/bin/pip install fonttools
+
+# convert to ttx
+venv/bin/ttx ./*.otf
+
+# set isFixedPitch to 1 (linux)
+sed -i -e 's/isFixedPitch value="0"/isFixedPitch value="1"/g' ./*.ttx
+
+# convert back
+mkdir fixed
+venv/bin/ttx -d fixed/ ./*.ttx
+```
+
 ### apply dotfiles
 
 ```sh
