@@ -61,6 +61,9 @@ sed -i -e 's/isFixedPitch value="0"/isFixedPitch value="1"/g' ./*.ttx
 # convert back
 mkdir fixed
 venv/bin/ttx -d fixed/ ./*.ttx
+
+# convert to woff2
+woff2_compress <filename>
 ```
 
 ### apply dotfiles
@@ -91,6 +94,7 @@ brew info <package>  # always worth a look!
 > It is not a comprehensive list and not all of these are represented in the dotfiles.
 > In the future, I'd like to have this automatically installed with a bash script. Maybe.
 
+* age
 * asciinema & agg
 * atuin
 * bat
@@ -103,6 +107,7 @@ brew info <package>  # always worth a look!
 * gnu stow
 * homebrew
 * hugo
+* keepassxc (make sure to include keepassxc-cli)
 * kitty
 * neovim
 * node (npm capabilities)
@@ -111,6 +116,7 @@ brew info <package>  # always worth a look!
 * pyenv & pyenv-virtualenv
 * rclone
 * ripgrep
+* secret-tool
 * tellico
 * twine
 * visidata
