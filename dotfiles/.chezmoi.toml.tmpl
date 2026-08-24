@@ -2,6 +2,16 @@
 {{- $git_email := promptStringOnce . "email" "Email address for git operations" -}}
 {{- $work := promptBoolOnce . "work" "Is this a computer to be used at work (y/n)" -}}
 
+{{- if not $work }}
+{{- $identity := promptStringOnce . "identity" "Identity file path for age encryption" -}}
+{{- $recipient := promptStringOnce . "recipient" "Public key for age encryption" -}}
+
+encryption = "age"
+[age]
+    identity = "{{ $identity }}"
+    recipient = "{{ $recipient }}"
+{{ end -}}
+
 [data]
     xdgCacheDir  = "{{ .chezmoi.homeDir }}/.cache"
     xdgConfigDir = "{{ .chezmoi.homeDir }}/.config"
