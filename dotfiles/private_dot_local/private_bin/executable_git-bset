@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+# Set an arbitrary branch.<current-branch>.<key> config value.
+#
+# Usage:
+# git bset <key> <value...>
+#
+# Examples:
+# git bset protected true
+# git bset note "dont merge until saturday"
+
+set -euo pipefail
+
+if [ "$#" -lt 2 ]; then
+  echo "usage: git bset <key> <value...>" >&2
+  exit 1
+fi
+
+BRANCH=$(git symbolic-ref --short HEAD) || {
+  echo "git bset: not on a branch" >&2
+  exit 1
+}
+
+KEY="$1"
+shift
+
+git config "branch.${BRANCH}.${KEY}" "$*"

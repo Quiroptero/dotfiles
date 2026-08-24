@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+# Show the current branch's description.
+#
+# Usage: git desc
+
+set -euo pipefail
+
+BRANCH=$(git symbolic-ref --short HEAD) || {
+  echo "git desc: not on a branch" >&2
+  exit 1
+}
+
+git config --get "branch.${BRANCH}.description" || echo "(no description)"

@@ -1,0 +1,68 @@
+#!/usr/bin/env bash
+# Delete every local branch except ones explicitely marked `protected`.
+#
+# A branch is skipped if `git config --get --bool branch.<name>.protected` is `true`.
+# Mark a branch with `git bset protected true`.
+#
+# Usage:
+# git branch-prune        # preview only
+# git branch-prune --yes  # actually delete
+
+set -euo pipefail
+
+DO_IT=0
+if [ "${1:-}" = "--yes" ]; then
+  DO_IT=1
+fi
+
+CURRENT_BRANCH=$(git symbolic-ref --short HEAD 2>/dev/null || true)
+
+TO_DELETE=()
+PROTECTED=()
+
+while IFS= read -r b; do
+  is_protected=$(git config --get --bool "branch.${b}.protected" 2>/dev/null || echo "false")
+  if [ "$is_protected" = "true" ]; then
+    PROTECTED+=("$b")
+  else
+    TO_DELETE+=("$b")
+  fi
+done < <(git for-each-ref --format='%(refname:short)' refs/heads/)
+
+echo "Protected (branch.<name>.protected=true), will skip:"
+if [ "${#PROTECTED[@]}" -eq 0 ]; then
+  echo "  (none)"
+else
+  printf '  %s\n' "${PROTECTED[@]}"
+fi
+echo
+echo "Candidates for 'git branch -d':"
+if [ "${#TO_DELETE[@]}" -eq 0 ]; then
+  echo "  (none)"
+  exit 0
+else
+  printf '  %s\n' "${TO_DELETE[@]}"
+fi
+
+if [ "$DO_IT" -ne 1 ]; then
+  echo
+  echo "Dry run only."
+  exit 0
+fi
+
+echo
+echo "Deleting..."
+FAILED=()
+for b in "${TO_DELETE[@]}"; do
+  if git branch -d "$b" 2>&1; then
+    :
+  else
+    FAILED+=("$b")
+  fi
+done
+
+if [ "${#FAILED[@]}" -gt 0 ]; then
+  echo
+  echo "Not deleted:"
+  printf '  %s\n' "${FAILED[@]}"
+fi

@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+# Set (or clear if called with no args) the current branch's description.
+# Equivalent to `git branch --edit-description` but non-interactive.
+#
+# Usage:
+# git setdesc <description>
+# git setdesc    # clears the description
+
+set -euo pipefail
+
+BRANCH=$(git symbolic-ref --short HEAD) || {
+  echo "git-setdesc: not on a branch" >&2
+  exit 1
+}
+
+if [ "$#" -eq 0 ]; then
+  git config --unset "branch.${BRANCH}.description" 2>/dev/null || true
+else
+  git config "branch.${BRANCH}.description" "$*"
+fi

@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# List every local branch with its description.
+#
+# Usage:
+# git descs
+
+set -euo pipefail
+
+git for-each-ref --format='%(refname:short)' refs/heads/ | while IFS= read -r b; do
+  d=$(git config --get "branch.${b}.description" 2>/dev/null || true)
+  printf "%-45s %s\n" "$b" "${d:--}"
+done

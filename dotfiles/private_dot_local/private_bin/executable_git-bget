@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+# Get a branch.<current-branch>.<key> config value.
+#
+# Usage:
+# git bget <key>
+
+set -euo pipefail
+
+if [ "$#" -lt 1 ]; then
+  echo "usage: git bget <key>" >&2
+  exit 1
+fi
+
+BRANCH=$(git symbolic-ref --short HEAD) || {
+  echo "git bget: not on a branch"
+  exit 1
+}
+
+git config --get "branch.${BRANCH}.${1}"
